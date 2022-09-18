@@ -1,0 +1,44 @@
+<mat-grid-list cols="2" rowHeight="100vh">
+  <mat-grid-tile class="bg-img"></mat-grid-tile>
+  <mat-grid-tile class="bg-input"
+    ><mat-card class="card-login">
+      <form
+        [formGroup]="loginForm"
+        (submit)="login()"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        class="login-form"
+      >
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> E-Mail </mat-label>
+          <input matInput formControlName="email" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> Senha </mat-label>
+          <input matInput formControlName="password" type="password" />
+        </mat-form-field>
+        <a class="forgot-password" routerLink="/recovery-password"
+          >Esqueci minha senha</a
+        >
+        <button
+          mat-raised-button
+          color="accent"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
+          Entrar
+        </button>
+        <div class="create-account">
+          <span>Não tem uma conta?</span>
+          <button
+            mat-raised-button
+            color="secondary"
+            routerLink="/create-account"
+          >
+            Crie uma
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

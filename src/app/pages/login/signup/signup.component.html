@@ -1,0 +1,44 @@
+<mat-grid-list cols="2" rowHeight="100vh">
+  <mat-grid-tile class="bg-img"></mat-grid-tile>
+  <mat-grid-tile class="bg-input"
+    ><mat-card class="card-login">
+      <form
+        [formGroup]="loginForm"
+        (submit)="createAccount()"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        class="login-form"
+      >
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> Nome </mat-label>
+          <input matInput formControlName="name" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> Avatar </mat-label>
+          <ngx-mat-file-input
+            formControlName="avatar"
+            accept="image/png, image/jpeg"
+          >
+            <mat-icon ngxMatFileInputIcon color="accent">folder</mat-icon>
+          </ngx-mat-file-input>
+        </mat-form-field>
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> E-Mail </mat-label>
+          <input matInput formControlName="email" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field class="form-field" color="accent">
+          <mat-label> Senha </mat-label>
+          <input matInput formControlName="password" type="password" />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="accent"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
+          Criar conta
+        </button>
+      </form>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

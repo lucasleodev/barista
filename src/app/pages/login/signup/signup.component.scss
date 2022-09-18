@@ -1,0 +1,32 @@
+.bg-img {
+  background-image: url("/assets/backgrounds/jonathan-borba-21tOEaJPM_o-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.bg-input {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(210, 210, 210, 1) 74%
+  );
+}
+
+.card-login {
+  width: 30vw;
+
+  > .login-form,
+  .form-field {
+    width: 100%;
+  }
+
+  .forgot-password {
+    font-size: 0.8rem;
+    color: inherit;
+    text-decoration: none;
+    margin: 0 0 0.7rem 0;
+  }
+}

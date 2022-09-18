@@ -1,0 +1,46 @@
+.spacer {
+  margin: 0 10px 0 0;
+}
+
+.sidenav {
+  width: 15vw;
+}
+
+.area {
+  height: calc(100vh - 64px - 32px);
+}
+
+.navbar {
+  background-color: #5d3535;
+  > .-spacer {
+    flex: 1 1 auto;
+  }
+
+  > span {
+    > .avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      margin: 0 0 0 1rem;
+    }
+  }
+
+  > .navbar-user {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: 0.9rem;
+  font-weight: 300;
+
+  height: 2rem;
+  z-index: 1;
+}

@@ -1,0 +1,28 @@
+<div *ngIf="orderData" class="content">
+  <h1>
+    {{ orderData && orderData.id ? "Atualizar pedido ☕" : "Criar pedido ☕" }}
+  </h1>
+  <form
+    [formGroup]="orderForm"
+    (submit)="sendOrder()"
+    class="order-form"
+    fxLayout="column"
+  >
+    <mat-form-field class="form-field" appearance="fill" color="accent">
+      <mat-label> Nome do cliente </mat-label>
+      <input matInput formControlName="customer" />
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="fill" color="accent">
+      <mat-label> Café </mat-label>
+      <input matInput formControlName="coffe" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!orderForm.valid"
+    >
+      {{ orderData && orderData.id ? "Atualizar pedido" : "Criar pedido" }}
+    </button>
+  </form>
+</div>

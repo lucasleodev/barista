@@ -1,0 +1,43 @@
+<mat-toolbar class="navbar">
+  <mat-icon>coffee</mat-icon>
+  <span class="spacer"></span>
+  <span>Barista</span>
+  <span class="-spacer"></span>
+  <span *ngIf="user" fxLayout="row" fxLayoutAlign=" center" class="navbar-user"
+    >Olá, <strong>{{ user.name }}</strong
+    ><img class="avatar" [src]="user.avatar"
+  /></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon (click)="logout()" matTooltip="Fazer logout">logout</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="area">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-action-list>
+      <button mat-list-item (click)="showOrders()">
+        <mat-icon>storefront</mat-icon> <span class="spacer"></span>Mostrar
+        pedidos
+      </button>
+      <button mat-list-item (click)="newOrder()">
+        <mat-icon>shopping_basket</mat-icon> <span class="spacer"></span>Novo
+        pedido
+      </button>
+    </mat-action-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-toolbar class="footer"
+  ><span fxLayout="row" fxLayoutAlign="end center"
+    >Feito com
+    <mat-icon [ngStyle]="{ color: '#940000', margin: '0 0.5rem' }"
+      >favorite</mat-icon
+    >
+    por Lucas Xavier</span
+  ></mat-toolbar
+>
